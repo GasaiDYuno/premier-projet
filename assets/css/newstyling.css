@@ -1,0 +1,171 @@
+                /* Darkmode */
+                :root {
+                    --primary-color: #302AE6;
+                    --secondary-color: #536390;
+                    --font-color: green;
+                    --bg-color: lightgray;
+                    --heading-color: red;
+                  }
+                  
+                  [data-theme=dark] {
+                    --primary-color: #9A97F3;
+                    --secondary-color: #818cab;
+                    --font-color: #e1e1ff;
+                    --bg-color: #161625;
+                    --heading-color: #818cab;
+                  }
+                  
+                  
+                  #contener {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                  }
+                
+                  .theme-switch-wrapper {
+                    display: flex;
+                    align-items: center;
+                  }
+                  
+                  .theme-switch-wrapper em {
+                    margin-left: 10px;
+                    font-size: 1rem;
+                  }
+                  
+                  .theme-switch {
+                    display: inline-block;
+                    height: 34px;
+                    position: relative;
+                    width: 60px;
+                  }
+                  
+                  .theme-switch input {
+                    display: none;
+                  }
+                  
+                  .slider {
+                    background-color: #ccc;
+                    bottom: 0;
+                    cursor: pointer;
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    transition: 0.4s;
+                  }
+                  
+                  .slider:before {
+                    background-color: red;
+                    bottom: 4px;
+                    content: "";
+                    height: 26px;
+                    left: 4px;
+                    position: absolute;
+                    transition: 0.4s;
+                    width: 26px;
+                  }
+                  
+                  input:checked + .slider {
+                    background-color: blue;
+                  }
+                  
+                  input:checked + .slider:before {
+                    transform: translateX(26px);
+                  }
+                  
+                  .slider.round {
+                    border-radius: 34px;
+                  }
+                  
+                  .slider.round:before {
+                    border-radius: 50%;
+                  }
+                    /* fin du Darkmode */
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  margin: 0;
+  padding: 0;
+  font-size: calc(1rem + 0.25vh);
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "montserrat", sans-serif;
+}
+.header{
+    height: 100px;
+    background: #bdc3c7;
+    padding: 0 20px;
+    color: #fff;
+}
+
+.logo{
+    line-height: 100px;
+    float: left;
+    text-transform: uppercase;
+}
+
+.menu{
+    float: right;
+    line-height: 100px;
+}
+.menu a{
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 0 10px;
+        transition: 0.4s;
+
+}
+.show-menu-btn, .hide-menu-btn{
+    transition: 0.4s;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+.show-menu-btn{
+    float: right;
+}
+.show-menu-btn i{
+    line-height: 100px; 
+}
+.menu a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover{
+    color: #e74c3c;
+}
+#chk{
+    position: absolute;
+    visibility: hidden;
+    z-index: -1111;
+}
+@media screen and (max-width:800px) {
+    .show-menu-btn, .hide-menu-btn{
+        display: block;
+    }
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #333;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 80px 0;
+        line-height: normal;
+        transition: 0.7s;
+    }
+    .menu a{
+        display: block;
+        padding: 20px;
+    }
+    .hide-menu-btn{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #chk:checked ~ .menu{
+        right: 0;
+    }
+}

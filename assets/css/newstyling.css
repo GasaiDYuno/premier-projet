@@ -3,7 +3,7 @@
                     --primary-color: #302AE6;
                     --secondary-color: #536390;
                     --font-color: green;
-                    --bg-color: lightgray;
+                    --bg-color: #ffffff;
                     --heading-color: red;
                   }
                   
@@ -81,6 +81,7 @@
                     border-radius: 50%;
                   }
                     /* fin du Darkmode */
+                    /* Début nav */
 body {
   background-color: var(--bg-color);
   color: var(--font-color);
@@ -95,7 +96,8 @@ body {
 }
 .header{
     height: 100px;
-    background: #bdc3c7;
+    background-color: var(--bg-color);
+    color: var(--font-color);
     padding: 0 20px;
     color: #fff;
 }
@@ -111,7 +113,8 @@ body {
     line-height: 100px;
 }
 .menu a{
-        color: #fff;
+        background-color: var(--bg-color);
+        color: var(--font-color);
         text-transform: uppercase;
         text-decoration: none;
         padding: 0 10px;
@@ -168,4 +171,47 @@ body {
     #chk:checked ~ .menu{
         right: 0;
     }
+}
+                /*Fin de nav*/
+                /* Grid */
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .one {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+  .two { 
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+  }
+  .three {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .four {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  .five {
+    grid-column: 2;
+    grid-row: 4;
+  }
+  .six {
+    grid-column: 3;
+    grid-row: 4;
+  }
+                /* Fin du Grid*/
+
+h1{
+    text-align: center;
+}
+.logo1{
+    line-height: 100px;
+    float: left;
+    background-color: var(--bg-color);
+    color: var(--font-color);
 }
